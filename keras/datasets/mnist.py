@@ -21,7 +21,7 @@ def load_data(path='mnist.npz'):
     path = get_file(path,
                     origin='https://s3.amazonaws.com/img-datasets/mnist.npz',
                     file_hash='8a61469f7ea1b51cbae51d4f78837e45')
-    f = np.load(path)
+    f = np.load(path)#get_file处理了path的存储格式，方便np.load处理。
     x_train, y_train = f['x_train'], f['y_train']
     x_test, y_test = f['x_test'], f['y_test']
     f.close()
